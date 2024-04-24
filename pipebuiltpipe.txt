@@ -1,0 +1,29 @@
+ANGULAR PİPE
+Pipelarla beraber uygulama içerisindeki değişkenlerimin veya listelerimin yapısı içerisinde değişiklik yaparak alternatif yapılarını kullanabilirim.
+Örneğin liste içinde arama işlemi yapmak istiyorsam pipeları kullanarak mevcut veriyi pipe içerisine verip çıktı olarak yeni sorgusunu elde edebiliyorum.
+Bu sayede orjinal verimde bozulmamış oluyor. Veriyi pipe isimli alanıma yerleştiriyorum buraya yerleştirdikten sonra yapmak istediğim işlemleri örneğin
+ arama işlemi gibi yerleştiriyorum. Ve çıktı olarak yeni bir sonuç vermiş oluyor.Pipe kullandığım zaman ekranda yeni sonucu görüyorum.
+ Ama datam hiçbir zaman bozulmamış oluyor.
+Pipe, belirli bir giriş değerini alır, onu işler ve dönüştürür, ardından kullanıcı arayüzünde belirtilen bir formatta çıktı olarak sunar.
+Yani, bir pipe, veri dönüşümü, formatlama veya filtreleme gibi işlevleri gerçekleştiren bir JavaScript sınıfıdır.
+Pipe’lama işlemi, elinizdeki bir değeri veya veriyi Pipe’lara gönderip, bu değerlerin işlenip, kendi içindeki dönüşümlere göre yeni bir değer
+üretmesi olarak tanımlanabilir.Angular bizlere sağladığı hazır Pipe’ların yanı sıra, kendimize özel, Özelleştirilmiş Pipe’lar yazmamıza da
+olanak sağlar.
+Kısaca ekrandaki datanın bizim istediğimiz şekilde değiştirilmesi de diyebiliriz.
+
+ANGULAR BUİLT-IN PİPES
+
+Angular'da built-in pipes, bir dizi veri işleme işlevini gerçekleştirmek için kullanılan hazır yapılandırmalardır.
+ Bu pipelar, veri dönüşümü, formatlama ve görüntüleme amacıyla yaygın olarak kullanılır.
+Angular'da pipelar, veriyi doğrudan etkilemeden dönüştürmek için kullanılır.
+Dizeleri, para birimi miktarlarını, tarihleri ve diğer verileri görüntülemek için kullanılabilirler.
+ Pipelar, şablon ifadelerinde kullanılmak üzere basit fonksiyonlardır. Bir giriş değerini kabul eder ve dönüştürülmüş bir değer döndürür.
+
+Built-ın pipelardan bazıları şunlardır:
+-Uppercase,Lowercase:Metni büyük veya küçük harfe dönüştürür.
+-Date: Tarihleri belirli bir formata göre biçimlendirir.
+-CurrencyPipe: Sayıları para birimi cinsinden biçimlendirir.
+-DecimalPipe ve PercentPipe: Sayıları ondalık veya yüzde biçimine dönüştürür.
+-SlicePipe: Dizileri veya dizilere benzer nesneleri belli bir aralıkta keser.
+-Async: Özellikle verilerin anlık olarak güncellenmesi gereken durumlarda kullanılır.
+ Bu pipe, şablon içinde verilerin güncellenmesini beklerken bir yükleme göstergesi gibi davranmamızı sağlar.

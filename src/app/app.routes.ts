@@ -1,3 +1,76 @@
+import { CreateBrandPageComponent } from './pages/create-brand-page/create-brand-page.component';
+import { UpdateBrandPageComponent } from './pages/update-brand-page/update-brand-page.component';
 import { Routes } from '@angular/router';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { MainLayoutComponent } from './shared/layouts/main-layout/main-layout.component';
+import { TestPageComponent } from './pages/test-page/test-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { CreateModelPageComponent } from './pages/create-model-page/create-model-page.component';
+import { UpdateModelPageComponent } from './pages/update-model-page/update-model-page.component';
+import { ModelDetailsPageComponent } from './pages/model-details-page/model-details-page.component';
+import { CustomerPageComponent } from './pages/customer-page/customer-page.component';
+import { RentalPageComponent } from './pages/rental-page/rental-page.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home' //herhangibir şey yoksa home pathine yolla
+  },
+  {
+    path: 'home', //  /home
+    //pathMatch: 'prefix', //default olarak prefix zaten
+    //component: HomePageComponent, //layout yapmak için
+    component: MainLayoutComponent, //home ve altındaki sayfalar için, çalışması için html'ine router-outlet ekleriz
+    children: [
+      {
+        path: 'models', // /home/models
+        component: HomePageComponent
+      },
+      {
+        path: "models/:modelId", //home/models/{id}
+        component: ModelDetailsPageComponent
+      },
+      {
+        path: 'brands',
+        component: HomePageComponent
+      },
+      {
+        path: "customers",
+        component: CustomerPageComponent
+      },
+      {
+        path:"rentals",
+        component: RentalPageComponent
+      }
+    ]
+  },
+  {
+    path: 'layout-test',
+    component: TestPageComponent,
+  },
+  {
+    path:'brands/create',
+    component: CreateBrandPageComponent
+  },
+  {
+    path:'brands/update',
+    component: UpdateBrandPageComponent
+  },
+  {
+    path:'models/create',
+    component: CreateModelPageComponent
+  },
+  {
+    path:'models/update',
+    component: UpdateModelPageComponent
+  },
+  {
+    path: '**', // her path'de çalışır, En sona yazılmalı
+    redirectTo: 'not-found'
+  },
+  {
+    path: 'not-found',
+    component: NotFoundPageComponent
+  }
+];

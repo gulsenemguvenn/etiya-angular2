@@ -1,0 +1,19 @@
+<form [formGroup]="form" (submit)="onFormSubmit()" class="mx-2">
+  <div class="row g-3 align-items-center ">
+    <div class="col-auto">
+      <label for="name" class="col-form-label">Name:</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="name" formControlName="name" class="form-control" (focus)="showErrorMessage = true" required>
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-primary" type="submit" [disabled]="form.invalid" >Submit</button>
+    </div>
+  </div>
+
+
+  <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched" class="col-auto">
+    <span class="form-text text-danger">{{ form.get('name')?.errors | controlErrorMessage }}</span>
+  </div>
+
+</form>

@@ -1,0 +1,27 @@
+<!--<ul class="list-group text-center w-75">
+  <h3>Brands</h3>
+
+  <ng-container>
+    <li *ngFor="let item of list"
+    (click)="onSelectedBrand(item.id)"
+    [ngClass]="{active:selectedBrandId===item.id}"
+    class="list-group-item">
+      {{item.name}}
+    </li>
+  </ng-container>
+
+  </ul> -->
+  <div class="container-fluid mx-5 my-5">
+    <p class="btn btn-outline-primary " (click)="onBrandClick(null)">All</p>
+
+    <h3 class="text-primary">Brands</h3>
+    <ul class="list-group w-50 ">
+      @for (item of list; track $index) {
+      <li class="list-group-item fs-5" (click)="onBrandClick(item.id)" [ngClass]="{ 'active': selectedItemId === item.id-1 }">
+        {{ item.name }}
+      </li>
+      }
+    </ul>
+  </div>
+
+

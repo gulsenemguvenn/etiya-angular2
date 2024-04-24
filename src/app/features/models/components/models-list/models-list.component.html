@@ -1,0 +1,44 @@
+<!-- track $index yerine track item.id yazabiliriz -->
+<section class="mt-5">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of list">
+      <a class="text-decoration-none fs-5 text-dark" routerLink="/home/models/{{ item.id }}">{{ item.name }}</a>
+    </li>
+  </ul>
+
+  <div class="mt-2">
+    <button
+      class="btn btn-outline-primary"
+      type="button"
+      (click)="onPageChange(pageIndex - 1)"
+      [disabled]="pageIndex === 0"
+    >
+      Prev
+    </button>
+    <span class="btn btn-outline-primary disabled" >{{ pageIndex + 1 }}</span>
+    <button
+      class="btn btn-outline-primary"
+      type="button"
+      (click)="onPageChange(pageIndex + 1)"
+      [disabled]="!hasPageNext"
+    >
+      Next
+    </button>
+  </div>
+
+  <!-- <ul class="list-group text-center">
+      <ng-container *ngFor="let item of list">
+        <li class="list-group-item w-75">
+          <div class="row align-items-center">
+            <div class="col">{{ item.name }}</div>
+            <div class="col">{{ item.modelYear }}</div>
+            <div class="col">{{ item.dailyPrice }}</div>
+          </div>
+        </li>
+      </ng-container>
+    </ul> -->
+
+  <!-- @for (item of list; track $index) {
+  <p>{{item.name}} {{$index}}</p>
+} -->
+</section>

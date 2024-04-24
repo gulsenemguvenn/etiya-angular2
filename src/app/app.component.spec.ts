@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'etiya8-rentacar' title`, () => {
+  it(`should have the 'rentacar-fe' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('etiya8-rentacar');
+    expect(app.title).toEqual('rentacar-fe');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, etiya8-rentacar');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, rentacar-fe');
   });
 });

@@ -1,0 +1,52 @@
+<!-- <app-main-layout>
+  <h1>Rent A Car</h1>
+  <p>Find the best car for you!</p>
+</app-main-layout>
+
+importla yaparsak bu şekilde, pathler app.routers ile yaparsak alttaki gibi yazılır
+-->
+<div class="shadow p-3 mb-5 bg-body-tertiary">
+  <h3 class="pt-3 text-center fst-italic">Find the best car for you!</h3>
+  <img
+    src="https://raw.githubusercontent.com/ahmet-cetinkaya-instruction/rent-a-car-fake-backend/master/src/data/car-953357_1280.png"
+    alt="Image"
+    class="w-25 mx-auto d-block"
+  />
+
+</div>
+<div class="row">
+  <div class="col">
+    <app-brands-list (selectBrand)="onBrandSelect($event)"></app-brands-list>
+  </div>
+
+  <div class="col">
+    <div class="row g-3 align-items-center">
+      <div class="col-auto">
+        <label for="inputModel" class="col-form-label fs-5 fst-italic">Model: </label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="inputModel" class="form-control" [(ngModel)]="searchBrandName">
+      </div>
+
+      <div class="col-auto">
+        <button class="btn btn-outline-primary" type="submit">Submit</button>
+      </div>
+    </div>
+    <app-models-list
+      [brandId]="selectedBrandId"
+      [searchBrandName]="searchBrandName"
+    >
+
+    </app-models-list>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
