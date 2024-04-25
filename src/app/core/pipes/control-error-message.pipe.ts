@@ -18,10 +18,10 @@ export class ControlErrorMessagePipe implements PipeTransform {
       return 'Maximum 20 characters';
     }
     if (value?.["customError"]) {
-      return 'Bir hata meydana geldi.';
+      return 'An error occurred';
     }
     if (value?.["pattern"]) {
-      return 'Geçersiz formatta.';
+      return 'In invalid format';
     }
 
 
